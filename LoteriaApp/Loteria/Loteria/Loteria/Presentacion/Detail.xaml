@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:magic="clr-namespace:MagicGradients;assembly=MagicGradients"
+             x:Class="Loteria.Presentacion.Detail"
+             Title="Inicio"
+             >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="BIENVENIDO" 
+                   HorizontalOptions="CenterAndExpand" 
+                   Margin="0,30,0,0"
+                   FontSize="50"
+                   FontAttributes="Bold"
+                   TextColor="#014173"
+            />
+
+            <StackLayout VerticalOptions="FillAndExpand" 
+                   Margin="0"
+                   
+                   >
+                <Grid VerticalOptions="FillAndExpand"  
+                      Margin="20"
+>
+                    <magic:GradientGLView VerticalOptions="FillAndExpand">
+                        <magic:GradientGLView.GradientSource>
+                            <magic:LinearGradient Angle="180">
+                                <magic:GradientStop Color="#020024" Offset="0"/>
+                                <magic:GradientStop Color="#014173" Offset=".47"/>
+                                <magic:GradientStop Color="#1c82d1" Offset=".82"/>
+                            </magic:LinearGradient>
+                        </magic:GradientGLView.GradientSource>
+                    </magic:GradientGLView>
+
+                    <StackLayout VerticalOptions="Center" Margin="0,0,0,20">
+                        <Label Text="GANE CON NUESTRAS LOTERIAS Y CONCURSOS " 
+                               FontSize="25"
+                               TextColor="White"
+                               HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                               Margin="20,0,20,0"
+                               />
+                        <Image Source="https://i.ibb.co/C7rdThj/removal-ai-tmp-6498610532151.png"/>
+
+                        <Button Text="JUGAR"
+                                TextTransform="None"
+                                BackgroundColor="#9daebb"
+                                CornerRadius="10"
+                                FontSize="Medium"
+                                FontAttributes="Bold"
+                                Margin="30"
+                                Clicked="Jugar"/>
+
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

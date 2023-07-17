@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Loteria.Presentacion.usuario"
+             NavigationPage.HasNavigationBar="False">
+    <Grid>
+        <StackLayout>
+            <Image Source="https://i.ibb.co/JQXtB7z/usuario-2.png" Margin="20"/>
+            <Frame HasShadow="False" CornerRadius="10" Padding="2" BackgroundColor="blue" Margin="50,0,50,0" >
+                <Frame HasShadow="False" CornerRadius="8" BackgroundColor="White" Padding="12">
+                    <Label Text="@usuario-name" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="Black"/>
+                </Frame>
+            </Frame>
+
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button ImageSource ="https://i.ibb.co/QQDhvFc/aplicacion-wallet-pass-4.png" Clicked="Billetera" />
+
+                <Button ImageSource ="https://i.ibb.co/2PTvsgw/loteria-1.png" Clicked="ganadores"/>
+            </StackLayout>
+
+            <Label Text="Premios" Margin="30" FontSize="40" TextColor="Black" FontAttributes="Bold"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                <Button WidthRequest="150" HeightRequest="150" ImageSource="https://i.ibb.co/6J34sNS/ganador.png" />
+
+                <Button WidthRequest="150" HeightRequest="150" ImageSource="https://i.ibb.co/92dZpgK/loteria-4.png" />
+
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                <Label Text="Loteria" Margin="50,0,50,0" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+
+                <Label Text="Boletos" Margin="50,0,50,0" TextColor="Black" FontSize="Medium" FontAttributes="Bold"/>
+
+            </StackLayout>
+        </StackLayout>
+    </Grid>
+</ContentPage>

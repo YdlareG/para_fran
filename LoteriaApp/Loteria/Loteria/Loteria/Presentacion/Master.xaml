@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Loteria.Presentacion.Master"
+             Title="Master"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Button TextColor="Blue" Text="Usuario" x:Name="btn_usuario" Background="white" ImageSource ="https://i.ibb.co/gmLsb94/usuario-1.png" Clicked="btn_usuario_Clicked"/>
+            <Button Text="Billetera" x:Name="btn_cartera" Background="white" ImageSource ="https://i.ibb.co/QQDhvFc/aplicacion-wallet-pass-4.png" Clicked="Billetera"/>
+            <Button Text="Historial de Boletos" x:Name="btn_boletos" Background="white" ImageSource ="https://i.ibb.co/2S5ycSS/entradas-1.png" Clicked="Boletos"/>
+            <Button Text="Jugar" x:Name="btn_jugadas" Background="white" ImageSource ="https://i.ibb.co/2PTvsgw/loteria-1.png" Clicked="Jugar"/>
+            <Button Text="Resultados de los Juegos" x:Name="btn_ganadores" Background="white" ImageSource ="https://i.ibb.co/MkLF3P9/celebracion-1.png" Clicked="ganadores"/>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

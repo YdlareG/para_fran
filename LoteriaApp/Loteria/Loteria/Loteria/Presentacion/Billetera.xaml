@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Loteria.CustomRenderer"
+             mc:Ignorable="d"
+             x:Class="Loteria.Presentacion.Billetera"
+             NavigationPage.HasNavigationBar="False">
+
+
+    <Grid BackgroundColor="#FFFFFF">
+        <StackLayout Padding="0" Margin="0,-20,0,0" HorizontalOptions="FillAndExpand">
+            <Image Source="billetera2.png" Aspect="AspectFit" HorizontalOptions="Center" HeightRequest="250" Margin="0,40,0,0" WidthRequest="150" />
+
+            <Label Text="Saldo: " FontSize="25" TextColor="Black" FontAttributes="Bold" HorizontalOptions="Start" Margin="30,20,0,0"/>
+            <Frame BackgroundColor="Transparent" OutlineColor="#004AAD" Padding="10" CornerRadius="15" WidthRequest="300" HeightRequest="25" HorizontalOptions="Center">
+                <!-- Contenido es el dinero de la persona -->
+                
+            </Frame>
+
+            
+            <StackLayout Orientation="Horizontal" Margin="0,25">
+                <Frame BackgroundColor="Transparent" OutlineColor="#004AAD" Padding="10" CornerRadius="15" Margin="2" HorizontalOptions="CenterAndExpand"  WidthRequest="300">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TransferButton_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Image Source="transferenci.png" HeightRequest="40" WidthRequest="40" VerticalOptions="Center"/>
+                        <Label Text="Transferencia" FontSize="20" TextColor="#004AAD" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="0,25">
+                <Frame BackgroundColor="Transparent" OutlineColor="#004AAD" Padding="10" CornerRadius="15" Margin="2" HorizontalOptions="CenterAndExpand" WidthRequest="300">
+
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RetiroButton_Clicked"/>
+                    </Frame.GestureRecognizers>
+                    
+                    <StackLayout Orientation="Horizontal" Padding="10">
+                        <Image Source="cajero.png" HeightRequest="40" WidthRequest="40" VerticalOptions="Center"/>
+                        <Label Text="Retiro de Dinero" FontSize="20" TextColor="#004AAD" HorizontalOptions="Start" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+        
+        
+        
+        
+
+        <!-- Ventana emergente -->
+        <Frame x:Name="PopupFrame" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsVisible="False">
+            <!-- Contenido de la ventana emergente -->
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+
+                <!-- Título "Transferencia" -->
+                <Label Text="Transferencia" TextColor="#004AAD" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <!-- Rectángulo para el nombre -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nombre:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese su nombre" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para el número -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Número:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese el número" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para la fecha -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha:" VerticalOptions="Center"/>
+                        <Entry Placeholder="MM/YY" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para el código de seguridad -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Código de seguridad:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese el código" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para el monto a transferir -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="10" CornerRadius="15" Margin="10">
+                    <Entry Placeholder="Ingrese el monto a transferir" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+
+                </Frame>
+                <!-- Botón para ir a PayPal -->
+
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="1">
+                    <ImageButton Source="paypal.png" BackgroundColor="Transparent" Clicked="PayPalButton" HorizontalOptions="FillAndExpand" />
+                    <!-- Imagen en la esquina superior derecha -->
+                    <Image Source="Metodo.png" HorizontalOptions="EndAndExpand" />
+
+                </StackLayout>
+
+                <!-- RadioButton para seleccionar el destino -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                    <Label Text="Transferir a:" VerticalOptions="Center" FontSize="18" TextColor="Black"/>
+                    <RadioButton GroupName="destinationGroup" Content="Usuario" VerticalOptions="Center" HorizontalOptions="FillAndExpand" CheckedChanged="UsuarioRadioButton_CheckedChanged"/>
+                    <RadioButton GroupName="destinationGroup" Content="Billetera" VerticalOptions="Center" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <!-- Rectángulo para el nombre del usuario (solo visible cuando se selecciona "Usuario") -->
+                <Frame x:Name="UsuarioFrame" BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10" IsVisible="False">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nombre del Usuario:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese el nombre del usuario" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+
+                <!--Este es el boton de tranferir-->
+
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Transferir" BackgroundColor="#004AAD" TextColor="White" FontSize="24" CornerRadius="10" Clicked="TransferButton_Popup_Clicked" Margin="10"/>
+                </StackLayout>
+
+            </StackLayout>
+        </Frame>
+        
+        
+        
+
+        <Frame x:Name="PopupFrame2" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" IsVisible="False">
+            <!-- Contenido de la ventana emergente -->
+
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+
+                <!-- Título "Transferencia" -->
+                <Label Text="Retiro de Dinero" TextColor="#004AAD" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+                <!-- Rectángulo para el nombre -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Nombre:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese su nombre" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para el número -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Número:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese el número" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para la fecha -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Fecha:" VerticalOptions="Center"/>
+                        <Entry Placeholder="MM/YY" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para el código de seguridad -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Código de seguridad:" VerticalOptions="Center"/>
+                        <Entry Placeholder="Ingrese el código" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Rectángulo para el monto a transferir -->
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="10" CornerRadius="15" Margin="10">
+                    <Entry Placeholder="Ingrese el monto a transferir" VerticalOptions="Center" HorizontalOptions="FillAndExpand"/>
+
+                </Frame>
+                <!-- Botón para ir a PayPal -->
+
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="1">
+                    <ImageButton Source="paypal.png" BackgroundColor="Transparent" Clicked="PayPalButton" HorizontalOptions="FillAndExpand" />
+                    <!-- Imagen en la esquina superior derecha -->
+                    <Image Source="Metodo.png" HorizontalOptions="EndAndExpand" />
+
+                </StackLayout>
+
+                <!--Este es el boton de Retirar-->
+
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Button Text="Retirar Dinero" BackgroundColor="#004AAD" TextColor="White" FontSize="24" CornerRadius="10" Clicked="RetiroButton_Popup_Clicked" Margin="10"/>
+                </StackLayout>
+
+        </StackLayout>
+        </Frame>
+
+        <!--<Image Source="circuloo.png" Aspect="AspectFit" WidthRequest="300" HeightRequest="400" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,-80,-95"/>-->
+    </Grid>
+
+</ContentPage>
+
+
+
+
+
+
+
+

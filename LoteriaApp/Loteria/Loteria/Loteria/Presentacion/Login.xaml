@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Loteria.CustomRenderer"
+             mc:Ignorable="d"
+             x:Class="Loteria.Presentacion.Login"
+             NavigationPage.HasNavigationBar="False">
+
+
+<StackLayout BackgroundColor="white">
+        <Grid>
+            <StackLayout Padding="0" Margin="0,-60,0,0" HorizontalOptions="FillAndExpand">
+                <Frame  HeightRequest="500" BackgroundColor="Transparent" Padding="0" Margin="0">
+                    <Image Source="Logo.png" Aspect="AspectFit" Margin="0"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout Padding="0" Margin="10,320,10,0" HorizontalOptions="FillAndExpand">
+                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="false" Padding="0" Margin="0">
+
+                    <StackLayout>
+
+
+                        <StackLayout Margin="15">
+                            <Label Text="SIGN IN" FontSize="20" TextColor="Black" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Padding="0" Margin="15,10">
+
+                            <Frame BackgroundColor="Transparent" BorderColor="blue" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="https://www.findool.com/images/avatars/avatar.png" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <local:CustomEntry x:Name="userSpace" Placeholder="Usuario" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                                </StackLayout>
+                            </Frame>
+
+                            <Frame BackgroundColor="Transparent" BorderColor="blue" Margin="0,25,0,0" Padding="0" HorizontalOptions="FillAndExpand" CornerRadius="30">
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="SkyBlue" HeightRequest="40" WidthRequest="40" CornerRadius="30" Padding="0" Margin="5">
+                                        <Image Source="https://images.all-free-download.com/images/graphicthumb/lock_icon_6813906.jpg" Aspect="AspectFill" Margin="0"/>
+                                    </Frame>
+
+                                    <local:CustomEntry x:Name="passSpace" Placeholder="Contraseña" IsPassword="True" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+
+
+                                    <ImageButton x:Name="BtnOjo" Source="ojo.png" WidthRequest="30" HeightRequest="30" Clicked="MostrarPass" BackgroundColor="Transparent" />
+
+
+                                </StackLayout>
+
+                               
+                            </Frame>
+
+                            <StackLayout  Orientation="Horizontal" Margin="0,10,0,0" >
+                                <CheckBox IsChecked="False" Color="Black" />
+                                <Label Text="Recuerdame" TextColor="DarkGray" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+
+                                <Label Text="Olvidaste la Contraseña" TextColor="Blue" FontAttributes="Bold" HorizontalOptions="EndAndExpand" FontSize="Small" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+
+                            <Button Text="Iniciar sesion" BackgroundColor="#5271ff" TextColor="White" CornerRadius="30"  Margin="0,15"  Clicked="irmenu" />
+                            
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Margin="0,20">
+                                <Label Text="No tienes cuenta?" TextColor="DarkGray" FontSize="Small"/>
+                                <Button Text="Registrate" TextColor="Black" FontAttributes="Bold" FontSize="Small" BackgroundColor="Transparent" BorderColor="Transparent" BorderWidth="0" Clicked="IrRegistrarse" Margin="-10,-15,0,0" />
+
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+                    </StackLayout>
+
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+
+    
+</ContentPage>

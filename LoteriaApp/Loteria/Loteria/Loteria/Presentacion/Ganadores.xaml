@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Loteria.CustomRenderer"
+             mc:Ignorable="d"
+             x:Class="Loteria.Presentacion.Ganadores"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Frame BorderColor="#004AAD" Margin="60,60,30,10" Padding="0" CornerRadius="15">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="medalla2.png" Margin="20,0,0,0" HeightRequest="80" VerticalOptions="Center" />
+                        <Label Text="Ganadores" FontSize="35" FontAttributes="Bold" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+                <Frame BorderColor="#004AAD" Margin="90,20,90,0" Padding="10" CornerRadius="15">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="medalla.png" Margin="-30,0,0,0" HeightRequest="60" VerticalOptions="Center" />
+                        <Image Source="ganador1.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame BorderColor="#004AAD" Margin="90,20,90,0" Padding="10" CornerRadius="15">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="medalla.png" Margin="-30,0,0,0" HeightRequest="60" VerticalOptions="Center" />
+                        <Image Source="ganador2.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame BorderColor="#004AAD" Margin="90,20,90,0" Padding="10" CornerRadius="15">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="medalla.png" Margin="-30,0,0,0" HeightRequest="60" VerticalOptions="Center" />
+                        <Image Source="ganador3.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame BorderColor="#004AAD" Margin="90,20,90,0" Padding="10" CornerRadius="15">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="medalla.png" Margin="-30,0,0,0" HeightRequest="60" VerticalOptions="Center" />
+                        <Image Source="ganador4.png" HeightRequest="100" WidthRequest="100" VerticalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

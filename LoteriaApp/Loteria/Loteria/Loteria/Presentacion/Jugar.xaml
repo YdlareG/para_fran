@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Loteria.Presentacion.Jugar"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content BackgroundColor="White">
+        <StackLayout>
+            <Frame Margin="0,10" BackgroundColor="White" BorderColor="#5271ff" CornerRadius="2" WidthRequest="330" HeightRequest="15" HorizontalOptions="Center" VerticalOptions="Center">
+                
+            </Frame>
+
+            <Image  Margin="0,-70,-75,0" HeightRequest="50" Source="billetera2.png" />
+            <StackLayout Margin="265,-40,0,0" Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                <Label x:Name="txtBalance" Text="RD$ 99,999" FontSize="20" FontAttributes="Bold" TextColor="Black" />
+            </StackLayout>
+
+
+            <StackLayout Margin="0,20">
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="0,20" Text="Primer premio: " FontSize="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry Placeholder="00-99" Keyboard="Numeric" MaxLength="2" FontSize="20" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5">
+                    <Label Margin="0,20" Text="Segundo remio: " FontSize="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry Placeholder="00-99" Keyboard="Numeric" MaxLength="2" FontSize="20" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="0,5">
+                    <Label Margin="0,20" Text="Tercer premio: " FontSize="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry Placeholder="00-99" Keyboard="Numeric" MaxLength="2" FontSize="20" />
+                </StackLayout>
+            </StackLayout>
+
+
+            <StackLayout>
+                <Image Margin="0,0,320,0" Source="tickets.png" WidthRequest="50"/>
+                <StackLayout Margin="70,-50,0,0">
+                    <Label  Text="RD $"  FontSize="20" TextColor="Black" FontAttributes="Bold" />
+                    <Entry Margin="60,-45,0,0" Placeholder="Ingrese el monto" Keyboard="Numeric"  />
+                </StackLayout>
+            </StackLayout>
+
+
+            <Button Text="JUGAR" BackgroundColor="#5271ff" TextColor="White" CornerRadius="30" Margin="0,50" />
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

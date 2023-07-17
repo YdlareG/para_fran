@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Loteria.Presentacion.Registro"
+             NavigationPage.HasNavigationBar="False">
+
+  <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+            <Image Source="Logo.png" HeightRequest="300" HorizontalOptions="Center"/>
+
+            <Label Text="REGISTRO"  FontSize="20" TextColor="Black" HorizontalOptions="Center" FontAttributes="Bold"/>
+
+            <Label Text="Nombres" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Placeholder="Ingrese sus nombres" x:Name="NombresEntry"/>
+
+            <Label Text="Apellidos" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Placeholder="Ingrese sus apellidos" x:Name="ApellidosEntry"/>
+
+            <Label Text="Correo Electrónico" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Placeholder="Ingrese su correo electrónico" x:Name="CorreoElectronicoEntry"/>
+
+
+            <Label Text="Teléfono" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+            <Entry Placeholder="Ingrese su teléfono" x:Name="TelefonoEntry" Keyboard="Telephone" />
+
+
+            <Label Text="Nombre de usuario" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Placeholder="Ingrese su nombre de usuario" x:Name="UsernameEntry"/>
+
+
+            <Label Text="Contraseña" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Placeholder="Ingrese su contraseña" x:Name="PasswordEntry" IsPassword="True"/>
+
+            <Label  Text="Confirme la Contraseña" FontSize="16" TextColor="Black" FontAttributes="Bold"/>
+                <Entry Placeholder="Confirme su contraseña"  x:Name="ConfirmPasswordEntry" IsPassword="True"/>
+
+                
+            <ImageButton Margin="0,-10,0,0"  x:Name="BtnOjo" Source="ojo.png" WidthRequest="0" HeightRequest="50" Clicked="MostrarPass" BackgroundColor="Transparent" />
+
+            <Button Text="REGISTRARSE" BackgroundColor="#5271ff" TextColor="White" CornerRadius="30" Margin="0,5" />
+        
+            
+        </StackLayout>
+      
+  </ScrollView>
+
+</ContentPage>

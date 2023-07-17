@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:Loteria.CustomRenderer"
+             mc:Ignorable="d"
+             x:Class="Loteria.Presentacion.Boletas"
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="50" Padding="20,50,0,20">
+                <Frame BackgroundColor="Transparent" BorderColor="#004AAD" Padding="5" CornerRadius="15" Margin="5" HorizontalOptions="FillAndExpand" >
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="ticket.png" WidthRequest="75" HeightRequest="50" VerticalOptions="Center"/>
+                        <Grid Margin="10,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Historial de Boletas" FontSize="Title" HorizontalOptions="Center" BackgroundColor="White" TextColor="Black"
+                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HeightRequest="50" FontAttributes="Bold"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Ultimas Compras:" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+
+                    <StackLayout Orientation="Vertical" Spacing="15">
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="ticket.png" WidthRequest="75" HeightRequest="50" />
+                            <Label Text="03 20 15 por RD$100.00" FontSize="18" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="ticket.png" WidthRequest="75" HeightRequest="50" />
+                            <Label Text="45 04 06 por RD$500.00" FontSize="18" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="ticket.png" WidthRequest="75" HeightRequest="50" />
+                            <Label Text="78 08 05 RD$1,000.00" FontSize="18" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Spacing="10">
+                            <Image Source="ticket.png" WidthRequest="75" HeightRequest="50" />
+                            <Label Text="01 02 03 por RD$2,000.00" FontSize="18" VerticalOptions="Center" TextColor="Black" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

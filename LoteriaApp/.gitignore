@@ -1,0 +1,51 @@
+# Archivos y carpetas específicos de Visual Studio
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# Archivos de compilación de Xamarin.Forms
+*.apk
+*.ap_
+
+# Archivos generados por las herramientas de Xamarin.Forms
+*.userprefs
+*.dll
+*.pdb
+
+# Carpetas y archivos específicos de compilación
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+TestResults/
+[Tt]est[Rr]esult*/
+publish/
+publish-iis/
+
+# Logs y archivos de depuración
+*.log
+*.swp
+*.out
+*.mdmp
+*.tmp
+
+# Archivos y carpetas específicos de macOS
+.DS_Store
+ehthumbs.db
+Thumbs.db
+Loteria/Loteria.iOS/bin/iPhone/
+Loteria/Loteria.Android/bin/
+Loteria/Loteria.Android/obj/
+Loteria/Loteria/Loteria/bin/
+Loteria/Loteria/Loteria/obj/
+# 👍 nitido
